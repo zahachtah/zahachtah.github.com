@@ -1,1 +1,19 @@
+- slug: Networks
+  name: Networks
+  color: '#3498db'
+  
+- slug: Variation
+  name: Variation
+  color: '#1abc9c'
 
+- slug: Response
+  name: Response
+  color: '#3498db'
+  
+- slug: Agency
+  name: Agency
+  color: '#1abc9c'
+  
+- slug: Visualization
+  name: Visualization
+  color: '#3498db'
