@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Variation
+title: Response
 ---
 
-Variation
+Response
