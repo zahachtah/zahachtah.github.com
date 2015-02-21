@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What's Jekyll?
-category: general
+category: programming
 tags: [github, github-pages, jekyll]
 ---
 
