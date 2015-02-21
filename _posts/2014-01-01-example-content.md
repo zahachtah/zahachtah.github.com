@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Example content
-category: general
+category: programming
 tags: [github, github-pages, jekyll]
 ---
 
