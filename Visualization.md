@@ -1,6 +1,6 @@
 ---
 layout: page
-title: D3
+title: Visualization
 ---
 
 D3.js
