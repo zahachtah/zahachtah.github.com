@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Test iframe
-category: general
+category: programming
 tags: [github, github-pages, jekyll]
 ---
 
