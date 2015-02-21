@@ -8,7 +8,7 @@ title: Example content
   Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
 </div>
 
-Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. *Aenean eu leo quam.* Pellentesque $x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$ ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. *Aenean eu leo quam.* Pellentesque \\( x = {-b \pm \sqrt{b^2-4ac} \over 2a}. \\) ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
 
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
