@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Gotta test Post?
+title: Neuroscience
 category: programming
 tags: [github, github-pages, jekyll]
 ---
@@ -47,7 +47,7 @@ column(*overlap, boost, activeDutyCycle, minDutyCycle, lastLearnCell, *potential
 iterations, minOverlap, connectedPerm, permanenceInc, desiredLocalActivity, inhibitionRadius, cellsPerColumn, activationThreshold, minThreshold, maxSynapseCount, initialPerm, state {activeState , learnState }, *mInput, segmentUpdateList)
 ```
 
-![neurons](https://www.groksolutions.com/static/images/technology/brain-zoom.png)
+![neurons](https://dl.dropboxusercontent.com/u/38371278/sparseHTM.jpg)
 
 Phrases to examine:
 
