@@ -5,36 +5,73 @@ category: networks
 tags: [github, github-pages, jekyll]
 ---
 
-Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
+<div id='convas'></div>
+<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.25.0"></script>
+<script type="text/javascript">
+var width = 960,
+    height = 500,
+    angle = 2 * Math.PI,
+    T=0.0,
+    speed = 0.1,
+    S=0.0,
+    I=0.0001;
 
-### Built on Poole
+var data = d3.range(100).map(function(i) {
+  return {xloc: i/10-5, yloc: Math.max(0.0001,I), xvel: 0, yvel: 0};
+});
 
-Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by [@mdo](https://twitter.com/mdo). Poole, and every theme built on it (like Lanyon here) includes the following:
+var color = d3.scale.linear()
+    .domain([-0.0005, 0, 0.0005])
+    .range(["#a50026", "#ffffbf", "#006837"]);
+    /*.range(["red", "yellow", "green"]);*/
+    /*.range(["#a50026", "#ffffbf", "#006837"])*/
 
-* Complete Jekyll setup included (layouts, config, [404](/404), [RSS feed](/atom.xml), posts, and [example page](/about))
-* Mobile friendly design and development
-* Easily scalable text and component sizing with `rem` units in the CSS
-* Support for a wide gamut of HTML elements
-* Related posts (time-based, because Jekyll) below each post
-* Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)
+var x = d3.scale.linear()
+    .domain([-5, 5])
+    .range([0, width]);
 
-### Lanyon features
+var y = d3.scale.linear()
+    .domain([-5, 5])
+    .range([0, height]);
 
-In addition to the features of Poole, Lanyon adds the following:
+var time0 = Date.now(),
+    time1;
 
-* Toggleable sliding sidebar (built with only CSS) via **☰** link in top corner
-* Sidebar includes support for textual modules and a dynamically generated navigation with active link support
-* Two orientations for content and sidebar, default (left sidebar) and [reverse](https://github.com/poole/lanyon#reverse-layout) (right sidebar), available via `<body>` classes
-* [Eight optional color schemes](https://github.com/poole/lanyon#themes), available via `<body>` classes
+var fps = d3.select("#fps span");
 
-[Head to the readme](https://github.com/poole/lanyon#readme) to learn more.
+var canvas = d3.select("convas").append("canvas")
+    .attr("width", width)
+    .attr("height", height);
 
-### Browser support
+var context = canvas.node().getContext("2d");
 
-Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.
+context.strokeStyle = "#aaa";
+context.strokeWidth = 1.5;
 
-### Download
-
-Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.
-
-Thanks!
+d3.timer(function() {
+  context.clearRect(0, 0, width, height); /* clear the canvas (1-Math.pow(2.7,-Math.pow((d.xloc-T),2)/10))*d.yloc*/
+ context.fillStyle = "steelblue";
+    
+  data.forEach(function(d) {
+    /*d.xloc += d.xvel;*/
+    S =  d3.sum(data, function(d) { return d.yloc; });
+    M =  d3.max(data, function(d) { return d.yloc; });
+    T += 0.01 * (Math.random() - 0.5)  - 0.000001 * (T+2);
+    d.yvel=1*(1-S+I*100/0.05)*(Math.pow(2.7,-Math.pow((d.xloc-T),2)/4))-0.05;
+    d.yloc += d.yvel*d.yloc+I;
+    context.beginPath();
+    context.rect(x(d.xloc), height-10, 10, -y(d.yloc-5)*8/M);
+    context.fillStyle = color(d.yvel*d.yloc+I); 
+    context.fill();
+    context.stroke();
+  });
+    context.beginPath();
+    context.rect(x(T), height-10, 10, 20);
+    context.fillStyle = "red";
+    context.fill();
+    context.stroke(); 
+  time1 = Date.now();
+  fps.text(T);
+  time0 = time1;
+});
+</script>
