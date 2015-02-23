@@ -39,7 +39,7 @@ var time0 = Date.now(),
 
 var fps = d3.select("#fps span");
 
-var canvas = d3.select("convas").append("canvas")
+var canvas = d3.select("div#convas").append("canvas")
     .attr("width", width)
     .attr("height", height);
 
