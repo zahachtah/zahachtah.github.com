@@ -57,6 +57,8 @@ Neuron dynamics in the NeoCortix:
 
 ![Neuron](http://www.helcohi.com/sse/images/body/1-4ci.gif)
 
+Also, check out this important science result about [splitting the column](http://www.neuwritewest.org/blog/4167?rq=splitting)
+
 ### Dendrites
 
 The proximal dendrite segment receives feed-foorward input and the distal dendrite segments receive receive lateral input from nearby cells.
