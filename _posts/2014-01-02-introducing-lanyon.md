@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Introducing Lanyon
-category: networks
+title: d3 in Jekyll Example
+category: programming
 tags: [github, github-pages, jekyll]
 ---
 
