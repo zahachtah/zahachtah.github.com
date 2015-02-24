@@ -9,12 +9,15 @@ The problem of understanding complex adaptive systems under climate change
 * System dynamics
 * Adaptive change (temperature response)
 * Integrative change (lake with phosphate)
-* Network changes (food web dynamics and destruption)
+* Network changes (food web dynamics and desruption)
 
 ## A model of adaptive change
 
 
-$${dN_i \over dt} = \left( \left( 1 - \int_I{N_i} \right) e^{-{(T-t_{opt})^2 \over w^2}} - m \right) N_i + I.$$
+$${dN_i \over dt}$$
+
+
+= \left( \left( 1 - \int_I{N_i} \right) e^{-{(T-t_{opt})^2 \over w^2}} - m \right) N_i + I.$$
 
 
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
