@@ -15,6 +15,10 @@ The problem of understanding complex adaptive systems under climate change
 
 $${dN_i} \over {dt}= \left( 1- \int_I{N_i} \left) e^{-{(T-t_{opt})^2} /over {w^2}} - m \right) N_i + I$$
 
+
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+
+
 ## A model of integrative+adaptive change
 
 Add nutrient accumulation to abiotic variable, phosphate release coupled to biomass production, coupled to a community of plankton that has nutrient uptke traits.
