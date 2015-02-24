@@ -14,13 +14,23 @@ The problem of understanding complex adaptive systems under climate change
 ## A model of adaptive change
 
 
-$${dN_i \over dt} = \left( \left( 1 - \int_I{N_i} \right)$$
+$${dN_i \over dt} =  \left( 1 - \int_I{N_i} \right)$$
 
 
  e^{-{(T-t_{opt})^2 \over w^2}} - m \right) N_i + I.$$
 
 
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+
+Interactively show:
+
+Effect of external input on trait-lag, trait distributions
+
+Effect of change type on trait-lag, trait distributions
+
+Effect of time scale of change on trait-lag, trait distributions
+
+Criteria for adaptive capacity: measured as kurtosis
 
 
 ## A model of integrative+adaptive change
