@@ -14,7 +14,7 @@ The problem of understanding complex adaptive systems under climate change
 ## A model of adaptive change
 
 
-$${dN_i \over dt} =  1 - \sum_I{N_i} $$
+$${dN_i \over dt} =  1 - \sum_I N_i  $$
 
 
  e^{-{(T-t_{opt})^2 \over w^2}} - m \right) N_i + I.$$
