@@ -15,7 +15,7 @@ The problem of understanding complex adaptive systems under climate change
 
 \\[
 {dN_i} \over {dt}= \left( 1- \int_I{N_i} \left) e^{-{(T-t_{opt})^2} /over {w^2}} - m \right) N_i + I
-]//
+\\]
 
 ## A model of integrative+adaptive change
 
