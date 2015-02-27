@@ -16,7 +16,7 @@ The problem of understanding complex adaptive systems under climate change
 
 $${dN_i \over dt}$$
 
-$$\sum_{i=1}^n X_i$$
+$$\sum_i^n X_i$$
 
 
  e^{-{(T-t_{opt})^2 \over w^2}} - m \right) N_i + I.$$
