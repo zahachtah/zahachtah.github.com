@@ -22,7 +22,7 @@ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 $$\sum_{i=0}^n i^2 N_i$$
 
 
-$$\sum_{i=0}^n N_i$$
+$$\sum_{i=0}^n X_i$$
 
 
  e^{-{(T-t_{opt})^2 \over w^2}} - m \right) N_i + I.$$
