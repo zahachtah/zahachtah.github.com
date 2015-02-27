@@ -2,11 +2,15 @@
 layout: post
 title: d3 in Jekyll Example
 category: programming
-tags: [github, github-pages, jekyll]
+tags: 
+  - github
+  - "github-pages"
+  - jekyll
+published: true
 ---
 
 <div id='convas'></div>
-<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.25.0"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 <script type="text/javascript">
 var width = 960,
     height = 500,
