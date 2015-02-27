@@ -17,6 +17,8 @@ The problem of understanding complex adaptive systems under climate change
 $${dN_i \over dt}$$
 
 
+$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+
 
 $$\sum_i^n X_i$$
 
