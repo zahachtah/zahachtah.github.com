@@ -16,6 +16,8 @@ The problem of understanding complex adaptive systems under climate change
 
 $${dN_i \over dt}$$
 
+
+
 $$\sum_i^n X_i$$
 
 
