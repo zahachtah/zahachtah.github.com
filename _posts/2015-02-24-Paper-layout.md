@@ -20,7 +20,7 @@ $${dN_i \over dt}$$
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 
 
-$$\sum_i^n X_i$$
+$$\sum_{i=0}^n N_i$$
 
 
  e^{-{(T-t_{opt})^2 \over w^2}} - m \right) N_i + I.$$
