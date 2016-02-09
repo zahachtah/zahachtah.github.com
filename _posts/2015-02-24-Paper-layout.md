@@ -19,16 +19,18 @@ $${dN_i \over dt}$$
 
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 
+
 $$\sum_{i=0}^n i^2 N_i$$
 
 
 $$\sum_{i=0}^n X_i$$
 
 
- e^{-{(T-t_{opt})^2 \over w^2}} - m \right) N_i + I.$$
+$$e^{-{(T-t_{opt})^2 \over w^2}} - m \right) N_i + I.$$
 
 
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+
 
 Interactively show:
 
