@@ -3,26 +3,41 @@ layout: page
 title: Response
 ---
 
-Response
 
-Test
+<ul class="blog-tags-list">
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
+    {% assign t = tag | first %}
+    {% assign posts = tag | last %}
+    <li class="blog-tag-item" id="{{ t }}-item">
+      <a href onclick="filter('{{ t }}'); return false;">{{ t }}</a>
+    </li>
+  {% endfor %}
+</ul>
 
+ <ul class="blog-list">
+      {% for post in posts %}
+        {% if post.tags contains t %}
+          <li>
+            <span class="blog-item-date">{{ post.date | date: "%d %b %Y" }}</span>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
 
-Sgsfsg
 
 
 <div class="posts">
   {% for post in site.posts %}
   <div class="post">
-    <h1 class="post-title">
+    
       <a href="{{ post.url }}">
         {{ post.title }}
       </a>
-    </h1>
+    
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    #{{ post.content }}
   </div>
   {% endfor %}
 </div>
