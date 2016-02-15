@@ -42,6 +42,18 @@ Categories:
   {% endfor %}
 </ul>
 
+Collections
+<ul class="blog-tags-list">
+  {% assign sorted_collections = site.collections | sort %}
+  {% for collection in sorted_collections %}
+    {% assign t = collection | first %}
+    {% assign posts = collection | last %}
+    <li class="blog-tag-item" id="{{ t }}-item">
+      <a href onclick="filter('{{ t }}'); return false;">{{ t }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
 <div class="posts">
   {% for post in site.posts %}
   <div class="post">
