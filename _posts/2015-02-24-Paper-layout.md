@@ -11,6 +11,8 @@ The problem of understanding complex adaptive systems under climate change
 * Integrative change (lake with phosphate)
 * Network changes (food web dynamics and desruption)
 
+{% include d3.html %}
+
 ## A model of adaptive change
 
 
