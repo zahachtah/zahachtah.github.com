@@ -1,76 +1,79 @@
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://bl.ocks.org/mbostock/raw/4061502/0a200ddf998aa75dfdb1ff32e16b680a15e5cb01/box.js"></script>
+<canvas width="960" height="500"></canvas>
+<script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-var margin = {top: 10, right: 50, bottom: 20, left: 50},
-    width = 120 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var canvas = document.querySelector("canvas"),
+    context = canvas.getContext("2d"),
+    width = canvas.width,
+    height = canvas.height;
 
-var min = Infinity,
-    max = -Infinity;
+var n = 200,
+    tau = 2 * Math.PI,
+    nodes = d3.range(n).map(function() { return {radius: Math.random() * 8 + 2}; });
 
-var chart = d3.box()
-    .whiskers(iqr(1.5))
-    .width(width)
-    .height(height);
+var force = d3.layout.force()
+    .charge(0.5)
+    .gravity(0)
+    .friction(1)
+    .nodes(nodes)
+    .size([width, height])
+    .start();
 
-d3.csv("/morley.csv", function(error, csv) {
-  var data = [];
+var stroke = d3.scale.linear()
+    .domain([0, 1])
+    .range(["steelblue", "brown"]);
 
-  csv.forEach(function(x) {
-    var e = Math.floor(x.Expt - 1),
-        r = Math.floor(x.Run - 1),
-        s = Math.floor(x.Speed),
-        d = data[e];
-    if (!d) d = data[e] = [s];
-    else d.push(s);
-    if (s > max) max = s;
-    if (s < min) min = s;
-  });
+force.on("tick", function(e) {
+  var q = d3.geom.quadtree(nodes), node, i, vx, vy;
+  context.clearRect(0, 0, width, height);
+  context.lineWidth = 1.5;
 
-  chart.domain([min, max]);
+  for (i = 0; i < n; ++i) {
+    q.visit(collide(nodes[i]));
+  }
 
-  var svg = d3.select("div#example").selectAll("svg")
-      .data(data)
-    .enter().append("svg")
-      .attr("class", "box")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.bottom + margin.top)
-    .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-      .call(chart);
+  for (i = 0; i < n; ++i) {
+    node = nodes[i];
+    context.beginPath();
+    context.arc(node.x, node.y, node.radius - 0.75, 0, tau);
+    context.strokeStyle = stroke((vx = node.x - node.px) * vx + (vy = node.y - node.py) * vy);
+    context.stroke();
+  }
 
-  setInterval(function() {
-    svg.datum(randomize).call(chart.duration(1000));
-  }, 2000);
+  context.beginPath();
+  for (i = 0; i < n; ++i) {
+    node = nodes[i];
+    context.moveTo(node.x, node.y);
+    context.lineTo(node.x + (node.x - node.px) * 3, node.y + (node.y - node.py) * 3);
+  }
+  context.strokeStyle = "#fff";
+  context.stroke();
+
+  force.resume();
 });
 
-function randomize(d) {
-  if (!d.randomizer) d.randomizer = randomizer(d);
-  return d.map(d.randomizer);
-}
-
-function randomizer(d) {
-  var k = d3.max(d) * .02;
-  return function(d) {
-    return Math.max(min, Math.min(max, d + k * (Math.random() - .5)));
-  };
-}
-
-// Returns a function to compute the interquartile range.
-function iqr(k) {
-  return function(d, i) {
-    var q1 = d.quartiles[0],
-        q3 = d.quartiles[2],
-        iqr = (q3 - q1) * k,
-        i = -1,
-        j = d.length;
-    while (d[++i] < q1 - iqr);
-    while (d[--j] > q3 + iqr);
-    return [i, j];
-  };
+function collide(node) {
+  var r = node.radius + 16,
+      nx1 = node.x - r,
+      nx2 = node.x + r,
+      ny1 = node.y - r,
+      ny2 = node.y + r;
+  return function(quad, x1, y1, x2, y2) {
+    if (quad.point && (quad.point !== node)) {
+      var x = node.x - quad.point.x,
+          y = node.y - quad.point.y,
+          l = Math.sqrt(x * x + y * y),
+          r = node.radius + quad.point.radius;
+      if (l < r) {
+        l = (l - r) / (l * 2);
+        node.x -= x *= l;
+        node.y -= y *= l;
+        quad.point.x += x;
+        quad.point.y += y;
+      }
+    }
+    return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+  }
 }
 
 </script>
-
-<div id="example"></div>
