@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito&display=swap);
+svg.svelte-1kv48s4{display:inline-block;vertical-align:baseline;margin:2px}
+#linkHeader.svelte-1dr8ps0{position:relative}.title.svelte-1dr8ps0{position:absolute;width:100%;top:0px;left:8px;font-size:1.8em;font-weight:600;text-shadow:2px 2px 10px #001727;z-index:100}.section.svelte-1dr8ps0{position:absolute;bottom:8px;left:8px;font-size:1.8em;font-weight:600;text-shadow:2px 2px 10px #001727;z-index:1000}.sectionUpcoming.svelte-1dr8ps0{position:absolute;bottom:8px;left:8px;font-size:1.8em;font-weight:600;text-shadow:2px 2px 10px #001727;color:gray;z-index:1000}img.svelte-1dr8ps0{width:100%;z-index:20;position:relative
+}
+span.svelte-k6ffu7:focus{outline:none;background-color:#222
+  }
+img.svelte-s3je0u{width:100%
+}
+.container.svelte-8d79jf{position:relative;width:100%;height:0;padding-bottom:56.25%}.video.svelte-8d79jf{position:absolute;top:0;left:0;width:100%;height:100%}
+#meta.svelte-1kopnsd{color:salmon;margin:5px}#title.svelte-1kopnsd{font-size:1.2em;font-weight:500;color:steelblue
+}
+#linkContent.svelte-14299mi{margin-top:10px
+}#downLink.svelte-14299mi{color:steelblue
+}#upLink.svelte-14299mi{color:steelblue
+}#removeLink.svelte-14299mi{color:steelblue
+}#addLink.svelte-14299mi{margin-top:10px;background-color:gray;width:100%}
+body{margin:0;padding:0;color:#eee;background-color:#001727;display:block;overflow-x:hidden;font-family:'Nunito', sans-serif}:root{--bg:#001727;--txt:#eee}#toggleSettings.svelte-gjdmo{cursor:pointer;position:fixed;bottom:0px;left:0px;width:30px;height:30px;border-radius:0px 25px 0px 0px;background-color:salmon;z-index:2000
+}#up.svelte-gjdmo{cursor:pointer;position:fixed;bottom:0px;right:0px;padding:10px;width:30px;height:30px;border-radius:15px 0px 0px 0px;background-color:gray;z-index:2000;display:flex;flex-wrap:wrap-reverse;align-content:flex-start;direction:rtl}#content.svelte-gjdmo{background-color:#001727;margin:0;padding:0;float:left;grid-column:2/3}.container.svelte-gjdmo{background-color:#001727;display:grid;grid-template-columns:minmax(0.5rem, 1fr) minmax(auto, 57ch) minmax(0.5rem, 1fr)}
